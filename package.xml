@@ -6,7 +6,6 @@
   <maintainer email="julian.mason@tri.global">Mac Mason</maintainer>
   <license>Apache 2.0</license>
 
-  <!-- TODO(julian.mason): URL tag. -->
   <!-- <url type="website">http://wiki.ros.org/cartographer_hsr</url> -->
 
   <run_depend>cartographer_ros</run_depend>
