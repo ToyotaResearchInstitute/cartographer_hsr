@@ -19,7 +19,7 @@
       type="cartographer_node" args="
           -configuration_directory $(find cartographer_hsr)/configuration_files
           -configuration_basename hsr.lua"
-      output="screen" >
+      output="screen">
     <remap from="scan" to="hsrb/base_scan" />
     <remap from="odom" to="hsrb/odom" />
   </node>
