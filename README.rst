@@ -20,7 +20,7 @@ Purpose
 =======
 
 `Cartographer`_ is a system that provides real-time simultaneous localization
-and mapping `SLAM`_ across multiple platforms and sensor configurations. This
+and mapping (`SLAM`) across multiple platforms and sensor configurations. This
 repository provides Cartographer SLAM for the `Toyota HSR`_ via
 `Cartographer ROS`_.
 
