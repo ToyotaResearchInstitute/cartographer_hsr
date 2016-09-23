@@ -28,3 +28,30 @@ repository provides Cartographer SLAM for the `Toyota HSR`_ via
 .. _Cartographer ROS: https://github.com/googlecartographer/cartographer_ros
 .. _SLAM: https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping
 .. _Toyota HSR: http://www.toyota-global.com/innovation/partner_robot/family_2.html
+
+
+Setup
+=====
+
+If you're starting from scratch::
+
+  # Install wstool and prepare rosdep.
+  sudo apt-get update
+  sudo apt-get install -y python-wstool python-rosdep ninja-build
+
+  # Create a catkin workspace
+  mkdir ~/workspace
+  cd workspace
+  wstool init
+
+  # Prepare the workspace and fetch the code
+  wstool merge https://raw.githubusercontent.com/ToyotaResearchInstitute/cartographer_hsr/master/cartographer_hsr.rosinstall
+  wstool update
+
+  # Install system dependencies
+  rosdep update
+  rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
+
+  # Build and install.
+  catkin_make_isolated --install --use-ninja
+  source install_isolated/setup.bash
