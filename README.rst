@@ -40,8 +40,8 @@ If you're starting from scratch::
   sudo apt-get install -y python-wstool python-rosdep ninja-build
 
   # Create a catkin workspace
-  mkdir ~/workspace
-  cd workspace
+  mkdir -p ~/workspace/src
+  cd workspace/src
   wstool init
 
   # Prepare the workspace and fetch the code
