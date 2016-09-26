@@ -17,10 +17,6 @@ project(cartographer_hsr)
 find_package(catkin REQUIRED)
 catkin_package()
 
-install(DIRECTORY launch/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch/
-)
-
-install(DIRECTORY configuration_files/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/configuration_files/
+install(DIRECTORY launch configuration_files
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )

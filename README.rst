@@ -20,7 +20,7 @@ Purpose
 =======
 
 `Cartographer`_ is a system that provides real-time simultaneous localization
-and mapping `SLAM`_ across multiple platforms and sensor configurations. This
+and mapping (`SLAM`) across multiple platforms and sensor configurations. This
 repository provides Cartographer SLAM for the `Toyota HSR`_ via
 `Cartographer ROS`_.
 
@@ -28,3 +28,43 @@ repository provides Cartographer SLAM for the `Toyota HSR`_ via
 .. _Cartographer ROS: https://github.com/googlecartographer/cartographer_ros
 .. _SLAM: https://en.wikipedia.org/wiki/Simultaneous_localization_and_mapping
 .. _Toyota HSR: http://www.toyota-global.com/innovation/partner_robot/family_2.html
+
+
+Setup
+=====
+
+If you're starting from scratch::
+
+  # Install system dependencies
+  sudo apt-get update
+  sudo apt-get install -y \
+    cmake \
+    g++ \
+    git \
+    google-mock \
+    libboost-all-dev \
+    libeigen3-dev \
+    libgflags-dev \
+    libgoogle-glog-dev \
+    liblua5.2-dev \
+    libprotobuf-dev \
+    libsuitesparse-dev \
+    libwebp-dev \
+    ninja-build \
+    protobuf-compiler \
+    python-sphinx \
+    python-wstool
+
+
+  # Create a catkin workspace
+  mkdir -p ~/workspace/src
+  cd workspace/src
+  wstool init
+
+  # Prepare the workspace and fetch the code
+  wstool merge https://raw.githubusercontent.com/ToyotaResearchInstitute/cartographer_hsr/master/cartographer_hsr.rosinstall
+  wstool update
+
+  # Build and install.
+  catkin_make_isolated --install --use-ninja -C ~/workspace
+  source install_isolated/setup.bash
