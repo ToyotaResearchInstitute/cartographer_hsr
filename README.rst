@@ -35,9 +35,26 @@ Setup
 
 If you're starting from scratch::
 
-  # Install wstool and prepare rosdep.
+  # Install system dependencies
   sudo apt-get update
-  sudo apt-get install -y python-wstool python-rosdep ninja-build
+  sudo apt-get install -y \
+    cmake \
+    g++ \
+    git \
+    google-mock \
+    libboost-all-dev \
+    libeigen3-dev \
+    libgflags-dev \
+    libgoogle-glog-dev \
+    liblua5.2-dev \
+    libprotobuf-dev \
+    libsuitesparse-dev \
+    libwebp-dev \
+    ninja-build \
+    protobuf-compiler \
+    python-sphinx \
+    python-wstool
+
 
   # Create a catkin workspace
   mkdir -p ~/workspace/src
@@ -48,10 +65,6 @@ If you're starting from scratch::
   wstool merge https://raw.githubusercontent.com/ToyotaResearchInstitute/cartographer_hsr/master/cartographer_hsr.rosinstall
   wstool update
 
-  # Install system dependencies
-  rosdep update
-  rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
-
   # Build and install.
-  catkin_make_isolated --install --use-ninja
+  catkin_make_isolated --install --use-ninja -C ~/workspace
   source install_isolated/setup.bash
