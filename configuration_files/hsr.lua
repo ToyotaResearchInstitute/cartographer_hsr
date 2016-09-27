@@ -21,7 +21,7 @@ options = {
   published_frame = "odom",
   odom_frame = "odom",
   provide_odom_frame = false,
-  use_odometry_data = true,
+  use_odometry_data = false,
   use_constant_odometry_variance = true,
   constant_odometry_translational_variance = 1e-7,
   constant_odometry_rotational_variance = 1e-7,
@@ -32,7 +32,7 @@ options = {
   horizontal_laser_max_range = 20.,
   horizontal_laser_missing_echo_ray_length = 5.,
   num_lasers_3d = 0,
-  lookup_transform_timeout_sec = 0.01,
+  lookup_transform_timeout_sec = 0.1,
   submap_publish_period_sec = 0.3,
   pose_publish_period_sec = 5e-3,
 }

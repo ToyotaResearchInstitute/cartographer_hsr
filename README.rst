@@ -68,3 +68,13 @@ If you're starting from scratch::
   # Build and install.
   catkin_make_isolated --install --use-ninja -C ~/workspace
   source install_isolated/setup.bash
+
+Demo
+====
+
+After completing setup::
+
+  # Get an HSR .bag file.
+  wget -P ~/Downloads https://s3-us-west-1.amazonaws.com/cartographer-hsr/cartographer_hsr_example.bag
+  # Run the demo. This will start rviz and play the bag file automatically.
+  roslaunch cartographer_hsr hsr_demo.launch bag_filename:=${HOME}/Downloads/cartographer_hsr_example.bag
