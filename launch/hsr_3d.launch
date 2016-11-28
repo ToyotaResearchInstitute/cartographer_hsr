@@ -18,9 +18,10 @@
   <node name="cartographer" pkg="cartographer_ros"
       type="cartographer_node" args="
           -configuration_directory $(find cartographer_hsr)/configuration_files
-          -configuration_basename hsr.lua"
+          -configuration_basename hsr_3d.lua"
       output="screen">
-    <remap from="scan" to="hsrb/base_scan" />
+    <remap from="points2" to="velodyne_points" />
     <remap from="odom" to="hsrb/odom" />
+    <remap from="imu" to="hsrb/base_imu" />
   </node>
 </launch>

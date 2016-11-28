@@ -74,7 +74,11 @@ Demo
 
 After completing setup::
 
-  # Get an HSR .bag file.
+  # Get an HSR .bag file for 2D demo.
   wget -P ~/Downloads https://s3-us-west-1.amazonaws.com/cartographer-hsr/cartographer_hsr_example.bag
-  # Run the demo. This will start rviz and play the bag file automatically.
-  roslaunch cartographer_hsr hsr_demo.launch bag_filename:=${HOME}/Downloads/cartographer_hsr_example.bag
+  # Run the demo for 2D. This will start rviz and play the bag file automatically.
+  roslaunch cartographer_hsr hsr_demo_2d.launch bag_filename:=${HOME}/Downloads/cartographer_hsr_example.bag
+  # Get an HSR .bag file for 3D demo.
+  wget -P ~/Downloads https://s3-us-west-1.amazonaws.com/cartographer-hsr/cartographer_hsr_example_3d.bag
+  # Run the demo for 3D. This will start rviz and play the bag file automatically.
+  roslaunch cartographer_hsr hsr_demo_3d.launch bag_filename:=${HOME}/Downloads/cartographer_hsr_example_3d.bag

@@ -16,7 +16,7 @@
 
 <launch>
   <param name="/use_sim_time" value="true" />
-  <include file="$(find cartographer_hsr)/launch/hsr.launch" />
+  <include file="$(find cartographer_hsr)/launch/hsr_2d.launch" />
   <node name="rviz" pkg="rviz" type="rviz" required="true"
       args="-d $(find cartographer_ros)/configuration_files/demo_2d.rviz" />
   <node name="playbag" pkg="rosbag" type="play"
