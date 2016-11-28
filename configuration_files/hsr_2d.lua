@@ -21,25 +21,20 @@ options = {
   published_frame = "odom",
   odom_frame = "odom",
   provide_odom_frame = false,
-  use_odometry_data = false,
-  use_constant_odometry_variance = true,
-  constant_odometry_translational_variance = 1e-7,
-  constant_odometry_rotational_variance = 1e-7,
-  publish_occupancy_grid = true,
-  use_horizontal_laser = true,
-  use_horizontal_multi_echo_laser = false,
+  use_odometry = false,
+  use_laser_scan = true,
+  use_multi_echo_laser_scan = false,
   horizontal_laser_min_range = 0.,
   horizontal_laser_max_range = 20.,
   horizontal_laser_missing_echo_ray_length = 5.,
-  num_lasers_3d = 0,
+  num_point_clouds = 0,
   lookup_transform_timeout_sec = 0.1,
   submap_publish_period_sec = 0.3,
   pose_publish_period_sec = 5e-3,
 }
 
-options.map_builder.trajectory_builder_2d.submaps.resolution = 0.05
-options.map_builder.use_trajectory_builder_2d = true
-options.map_builder.trajectory_builder_2d.use_imu_data = false
-options.map_builder.trajectory_builder_2d.use_online_correlative_scan_matching = true
+MAP_BUILDER.use_trajectory_builder_2d = true
+TRAJECTORY_BUILDER_2D.use_imu_data = false
+TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true
 
 return options
